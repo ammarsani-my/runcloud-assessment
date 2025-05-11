@@ -17,3 +17,30 @@ Please put all the source code and configs inside your GitHub, GitLab or Bitbuck
 3. Linux Application 
 
 # The Solution
+These are the considered to proceed with the assessment:
++ Host environment: Based on my availability, macOS is used as the host environment for the php application
++ Remote environment: A vm-alike which is docker is used to host the app for produce the necessary storage information hosted on Ubuntu Linux OS
++ Inter-app messaging: RabbitMQ is decided to explore more and becoming the mediator to pass the necessary message in between app
+
+Within this documentation, the term/jargon used by RabbitMQ is used to describe each solution which are: producer, queue and consumer
+
+## The Queue
+Througout solving this assessment, RabbitMQ is hosted by running the latest version (`v4`) as a docker intance with the default configuration:
+
+```shell
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management
+```
+
+Connection details:
+- Host: `localhost`
+- Port: `5672`
+- Username: `guest`
+- Password: `guest`
+
+The queue for both to produce or consume is: `available_disk_space`
+
+# Recap
+To recap, the task given was good but challening in few aspect:
+- Having experiences with multiple OS helped me to quickly imagined the solution.
+- Used VM with few past project hence knowing that using docker could mock the linux environment to produce the necessary message to the consumer app
+- Knowing a little knowledge but lack of experinece with implementing RabbitMQ or Kafka is a gap in this task. Decided to solve this via RabbitMQ, while figuring out, could say enabling a real-time experience thru web socket via Pusher in few projects previously has some similarity with using RabbitMQ.
