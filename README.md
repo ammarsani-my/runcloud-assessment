@@ -26,10 +26,13 @@ The stack:
 + A cron scheduled PHP script that reading the available disk space and produce the message to the RabbitMQ queue
 + A PHP application that consume messages received from the RabbitMQ and displayed real-time on the page
 
+Dependencies:
++ [php-amqplib](https://github.com/php-amqplib/php-amqplib) - both producer and consumer app utilised this library as a protocol to interact with RabbitMQ
+
 > Within this documentation, the term / jargon used by RabbitMQ is used to standardise and easy understand of the solution provided which are: producer, queue and consumer
 
 ## The Queue
-Througout solving this assessment, RabbitMQ is hosted by running the latest version (`v4`) as a docker intance with the default configuration:
+Througout solving this assessment, RabbitMQ is hosted by running the latest version (`v4`) as a docker instance with the default configuration:
 
 ```shell
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management
@@ -42,6 +45,10 @@ Connection details:
 - Password: `guest`
 
 The exhange of message in between producer and consumer is via: `available_disk_space`
+
+## The Producer
+
+## The Consumer
 
 # Recap
 To recap, the task given was good but challening in few aspect:
