@@ -17,12 +17,16 @@ Please put all the source code and configs inside your GitHub, GitLab or Bitbuck
 3. Linux Application 
 
 # The Solution
-These are the considered to proceed with the assessment:
-+ Host environment: Based on my availability, macOS is used as the host environment for the php application
+These are the considered environment to proceed with the assessment:
++ Host environment: Based on my availability, macOS is used as the host environment for the application
 + Remote environment: A vm-alike which is docker is used to host the app for produce the necessary storage information hosted on Ubuntu Linux OS
-+ Inter-app messaging: RabbitMQ is decided to explore more and becoming the mediator to pass the necessary message in between app
 
-Within this documentation, the term/jargon used by RabbitMQ is used to describe each solution which are: producer, queue and consumer
+The stack:
++ RabbitMQ is decided to be explored and becoming the mediator to pass the necessary message in between app
++ A cron scheduled PHP script that reading the available disk space and produce the message to the RabbitMQ queue
++ A PHP application that consume messages received from the RabbitMQ and displayed real-time on the page
+
+> Within this documentation, the term / jargon used by RabbitMQ is used to standardise and easy understand of the solution provided which are: producer, queue and consumer
 
 ## The Queue
 Througout solving this assessment, RabbitMQ is hosted by running the latest version (`v4`) as a docker intance with the default configuration:
@@ -37,7 +41,7 @@ Connection details:
 - Username: `guest`
 - Password: `guest`
 
-The queue for both to produce or consume is: `available_disk_space`
+The exhange of message in between producer and consumer is via: `available_disk_space`
 
 # Recap
 To recap, the task given was good but challening in few aspect:
