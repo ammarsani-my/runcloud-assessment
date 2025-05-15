@@ -1,6 +1,8 @@
 # PHP Application as Consumer
 In this directory, there is a vanilla PHP application is created to consume the messages produce by producer. This app will treat the received messages and output it on console. The app is hosted within a host environment.
 
+Dependency to communicate with Rabbit MQ: `php-amqplib`
+
 To run the consumer application, execute the script by:
 
 ```bash

@@ -21,13 +21,10 @@ These are the considered environment to proceed with the assessment:
 + Host environment: Based on my availability, macOS is used as the host environment for the application
 + Remote environment: A vm-alike, docker is used to host the app for produce the necessary storage information hosted on Ubuntu Linux OS
 
-The stack:
+## The stack
 + RabbitMQ is decided to be explored and becoming the mediator to pass the necessary message in between app
-+ A cron scheduled PHP script that reading the available disk space and produce the message to the RabbitMQ queue
++ A Go application that reading the available disk space and produce the message to the RabbitMQ queue
 + A PHP application that consume messages received from the RabbitMQ and displayed real-time on the console
-
-Dependencies:
-+ [php-amqplib](https://github.com/php-amqplib/php-amqplib) - both producer and consumer app utilised this library as a protocol to interact with RabbitMQ
 
 > Within this documentation, the term / jargon used by RabbitMQ is used to standardise and easy understand of the solution provided which are: producer, queue and consumer
 
