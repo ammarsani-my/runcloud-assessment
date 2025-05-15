@@ -20,5 +20,5 @@ Once any message produced, the console will output:
      Total Space: xxx.xx GB
      Free Space: xx.xx GB (xx.xx%)
      Used Space: xx.xx GB (xx.xx%)
-     Timestamp: Y-m-d H:i:s
+     Stamped At: 0000-00-00 00:00:00 AMPM
 ```

@@ -34,7 +34,7 @@ $callback = function (AMQPMessage $message) {
     echo "     Total Space: " . formatBytes($data['total_space_bytes']) . "\n";
     echo "     Free Space: " . formatBytes($data['free_space_bytes']) . " ({$data['free_space_percentage']}%)\n";
     echo "     Used Space: " . formatBytes($data['used_space_bytes']) . " ({$data['used_space_percentage']}%)\n";
-    echo "     Timestamp: " . $data['stamped_at'] . "\n";
+    echo "     Stamped At: " . $data['stamped_at'] . "\n";
     echo "\n";
 
     $message->ack();
